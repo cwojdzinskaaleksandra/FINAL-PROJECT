@@ -3,9 +3,9 @@ package pl.coderslab.accessibility.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import pl.coderslab.accessibility.domain.Role;
-import pl.coderslab.accessibility.domain.User;
-import pl.coderslab.accessibility.domain.dto.RegisterDto;
+import pl.coderslab.accessibility.model.Role;
+import pl.coderslab.accessibility.model.User;
+import pl.coderslab.accessibility.model.dto.RegisterDto;
 import pl.coderslab.accessibility.exceptions.RegisterFailedException;
 import pl.coderslab.accessibility.repository.RoleRepository;
 import pl.coderslab.accessibility.repository.UserRepository;
@@ -37,7 +37,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public User save(User u) {
         u.setPassword(passwordEncoder.encode(u.getPassword()));
-        u.setEnabled(1);
         Role userRole = roleRepository.findByName("ROLE_USER");
         u.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
         return userRepository.save(u);
@@ -46,7 +45,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public User saveAdmin(User u) {
         u.setPassword(passwordEncoder.encode(u.getPassword()));
-        u.setEnabled(1);
         Role userRole = roleRepository.findByName("ROLE_USER");
         Role adminRole = roleRepository.findByName("ROLE_ADMIN");
         u.setRoles(new HashSet<Role>(Arrays.asList(userRole,adminRole)));
@@ -70,7 +68,7 @@ public class UserServiceImpl implements UserService {
             throw new RegisterFailedException("Password incorrect");
         }
         Role userRole = roleRepository.findByName("ROLE_USER");
-        User user = new User(dto.getName(),dto.getUsername(),passwordEncoder.encode(dto.getPassword()),1,new HashSet<Role>(Arrays.asList(userRole)));
+        User user = new User(null, dto.getUsername(),passwordEncoder.encode(dto.getPassword()), new HashSet<Role>(Arrays.asList(userRole)));
 
         return userRepository.save(user);
     }

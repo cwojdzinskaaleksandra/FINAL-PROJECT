@@ -1,4 +1,4 @@
-package pl.coderslab.accessibility.config;
+package pl.coderslab.accessibility.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

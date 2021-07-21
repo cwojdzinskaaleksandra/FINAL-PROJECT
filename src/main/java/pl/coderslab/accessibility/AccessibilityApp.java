@@ -4,8 +4,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import pl.coderslab.accessibility.domain.Role;
-import pl.coderslab.accessibility.domain.User;
+import pl.coderslab.accessibility.model.Role;
+import pl.coderslab.accessibility.model.User;
 import pl.coderslab.accessibility.service.RoleService;
 import pl.coderslab.accessibility.service.UserService;
 
@@ -34,7 +34,6 @@ public class AccessibilityApp {
             if(userService.findByUsername("admin")==null){ //tworze admina
 
                 User user = new User();
-                user.setName("Super user");
                 user.setUsername("admin");
                 user.setPassword("admin");
                 userService.saveAdmin(user);

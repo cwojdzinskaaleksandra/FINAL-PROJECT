@@ -5,8 +5,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import pl.coderslab.accessibility.domain.Role;
-import pl.coderslab.accessibility.domain.User;
+import pl.coderslab.accessibility.model.Role;
+import pl.coderslab.accessibility.model.User;
 import pl.coderslab.accessibility.security.CurrentUser;
 
 import java.util.HashSet;

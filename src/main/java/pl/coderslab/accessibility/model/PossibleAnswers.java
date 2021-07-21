@@ -1,12 +1,10 @@
-package pl.coderslab.accessibility.domain;
+package pl.coderslab.accessibility.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Entity
 @Data
@@ -14,6 +12,8 @@ import javax.validation.constraints.NotBlank;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
+@Table(name = "possible_answers")
 public class PossibleAnswers {
 
     @Id
@@ -23,4 +23,6 @@ public class PossibleAnswers {
     @NotBlank
     private String answer;
 
+    @OneToMany(mappedBy = "answerId")
+    private List<Answers> answers;
 }

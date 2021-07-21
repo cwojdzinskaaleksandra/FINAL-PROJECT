@@ -1,6 +1,4 @@
-package pl.coderslab.accessibility.domain.dto;
-
-import lombok.Data;
+package pl.coderslab.accessibility.model.dto;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -17,8 +15,8 @@ public class RegisterDto { //obiekt DTO czyli Data Transfer Object, wykorzystywa
                            //  Spring @Service method
                            // mozliwa walidacja w DTO
 
-    @NotNull
-    private String name;
+//    @NotNull
+//    private String name;
     @NotNull
     private String username;
     @Min(6)
@@ -26,13 +24,13 @@ public class RegisterDto { //obiekt DTO czyli Data Transfer Object, wykorzystywa
     @Min(6)
     private String confirm_password;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
     public String getUsername() {
         return username;

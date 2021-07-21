@@ -1,7 +1,7 @@
 package pl.coderslab.accessibility.service;
 
 
-import pl.coderslab.accessibility.domain.Role;
+import pl.coderslab.accessibility.model.Role;
 
 public interface RoleService {
     Role findByName(String name);

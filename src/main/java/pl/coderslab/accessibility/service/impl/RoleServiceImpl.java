@@ -2,7 +2,7 @@ package pl.coderslab.accessibility.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.coderslab.accessibility.domain.Role;
+import pl.coderslab.accessibility.model.Role;
 import pl.coderslab.accessibility.repository.RoleRepository;
 import pl.coderslab.accessibility.service.RoleService;
 

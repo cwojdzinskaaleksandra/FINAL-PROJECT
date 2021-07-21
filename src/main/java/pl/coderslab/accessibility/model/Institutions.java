@@ -1,17 +1,26 @@
-package pl.coderslab.accessibility.domain;
+package pl.coderslab.accessibility.model;
 
-import lombok.Data;
-import lombok.Getter;
+import lombok.*;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.UniqueElements;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
-public class Institution extends BaseEntity {
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Table(name = "institutions")
+public class Institutions {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @UniqueElements(message = "Nazwa musi być unikatowa")
     @NotBlank(message = "Nazwa nie może być pusta")
@@ -26,5 +35,8 @@ public class Institution extends BaseEntity {
 
     private String phoneNumber;
 
-    private Set<Answers> answers;
+    @OneToMany(mappedBy = "institutionId")
+    private List<Answers> answers;
+
+
 }

@@ -1,7 +1,7 @@
 package pl.coderslab.accessibility.service;
 
-import pl.coderslab.accessibility.domain.User;
-import pl.coderslab.accessibility.domain.dto.RegisterDto;
+import pl.coderslab.accessibility.model.User;
+import pl.coderslab.accessibility.model.dto.RegisterDto;
 import pl.coderslab.accessibility.exceptions.RegisterFailedException;
 
 import java.util.List;
