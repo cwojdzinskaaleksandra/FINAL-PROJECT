@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import pl.coderslab.accessibility.model.Institutions;
 import pl.coderslab.accessibility.service.InstitutionsService;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -25,15 +24,16 @@ public class InstitutionsController {
     public String institutionsList(Model model) {
         List<Institutions> institutionsList = institutionsService.findAllInstitutions();
         model.addAttribute("institutionsList", institutionsList);
-        return "institutions.jsp";
+        return "institutionsList";
     }
 
-    @GetMapping(value = "/add")
-    public String addInstitutionShow(){
-        return "institutionsForm";
+    @GetMapping(value = "institution/add")
+    public String addInstitutionShow(Model model){
+        model.addAttribute("institution", new Institutions());
+        return "institutionRegister";
     }
 
-    @PostMapping(value = "/add")
+    @PostMapping(value = "institution/add")
     public String addInstitutionPerform(@RequestParam String name,
                                  @RequestParam String address,
                                  @RequestParam String website,
@@ -41,19 +41,19 @@ public class InstitutionsController {
                                  Model model){
         Institutions institution = new Institutions(name, address, website, phoneNumber);
         model.addAttribute("institution", institution);
-        return "/institutionsAdded";
+        return "/success";
     }
 
     @GetMapping("/institutions/delete")
     public String deleteInstitution(@RequestParam Long id){
         institutionsService.deleteInstitution(id);
-        return "redirect:/institutions";
+        return "/success";
     }
 
     @GetMapping("/institutions/update")
     public String updateInstitution(@RequestParam Institutions institution){
         institutionsService.updateInstitution(institution);
-        return "redirect:/institutions";
+        return "/success";
     }
 
 
