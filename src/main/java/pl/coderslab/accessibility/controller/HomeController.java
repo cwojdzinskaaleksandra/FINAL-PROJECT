@@ -2,6 +2,7 @@ package pl.coderslab.accessibility.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,7 +14,7 @@ import pl.coderslab.accessibility.service.UserService;
 import javax.validation.Valid;
 
 @Controller
-public class HomeController { //kontroller gdzie do endpointów dostęp mają niezalogowani użytkownicy
+public class HomeController {
 
     @Autowired
     UserService userService;
@@ -59,9 +60,25 @@ public class HomeController { //kontroller gdzie do endpointów dostęp mają ni
         return "blank";
     }
 
-    @RequestMapping(value = "/form",method = RequestMethod.GET)
-    public String form(){
-        return "questions";
-    }
+//    @RequestMapping(value = "/error", method = RequestMethod.GET)
+//    public String error(){
+//        return "error";
+//    }
+
+//    @RequestMapping(value = "/institutions/add", method = RequestMethod.GET)
+//    public String addInstitution(){
+//        return "institutionAdd";
+//    }
+
+//    @RequestMapping(value = "/admin/addQuestion", method = RequestMethod.GET)
+//    public String addQuestion(){
+//        return "questionsAdd";
+//    }
+//
+//    @RequestMapping(value = "/institutions/answers",method = RequestMethod.GET)
+//    public String form(){
+//        return "answersForm";
+//    }
+
 
 }

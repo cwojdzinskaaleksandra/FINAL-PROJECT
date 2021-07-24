@@ -22,13 +22,10 @@ public class Institutions {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @UniqueElements(message = "Nazwa musi być unikatowa")
-    @NotBlank(message = "Nazwa nie może być pusta")
-    @Length(min=3, max=100, message = "Nazwa musi mieć minimum 3, a maksimum 100 znaków")
+    @NotBlank
     private String name;
 
-    @NotBlank(message = "Adres nie może być pusty")
-    @Length(min=10, max=70, message = "Adres musi mieć minimum 10, a maksimum 70 znaków")
+    @NotBlank
     private String address;
 
     private String website;

@@ -14,7 +14,7 @@
     <title>Institution form</title>
 </head>
 <body>
-<form:form method="post" modelAttribute="institution">
+<form:form method="post" modelAttribute="institutions">
 
 <%--    <label for="institutionName">Nazwa miejsca</label>--%>
 <%--    <input id="institutionName" type="text" name="institutionName" placeholder="Nazwa miejsca" required="required"/> <br>--%>
