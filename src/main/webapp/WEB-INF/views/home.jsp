@@ -19,8 +19,7 @@
         <p class="lead">Jeśli jesteś właścicielem obiektu lub pracownikiem instytucji i chciałbyś dodać informację <br/>
             o jego dostępności dla osób z niepełnosprawnościami to
             <a href="/login">zaloguj się</a>.
-<%--            do poprzedniej strony, lub przejść do--%>
-<%--            <a href="/">strony głównej</a>.--%>
+
         </p>
 
     </div>

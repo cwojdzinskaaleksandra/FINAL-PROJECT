@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ola
-  Date: 22/07/2021
-  Time: 16:39
-  To change this template use File | Settings | File Templates.
---%>
+
 <jsp:include page="header.jsp"/>
 <%@page pageEncoding="UTF-8" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -19,22 +13,24 @@
             <li class="breadcrumb-item">
                 <a href="index.html">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Dodawanie pytania</li>
+            <li class="breadcrumb-item active">Odpowiedzi na pytania</li>
         </ol>
 
         <p class="lead">
 
-        <h1 class="display-6">Wpisz pytanie które chcesz dodać</h1>
+        <h1 class="display-6">Strona w budowie :)</h1>
 
-        </p>
-        <form:form method="post" modelAttribute="question" action="/addQuestion">
+<%--        </p>--%>
+<%--        <form:form method="post" modelAttribute="answer" action="/addAnswers">--%>
 
+<%--            <label for="answer"></label>--%>
 
-            <form:input path="description" id="description" type="text" size="110" name="description" placeholder="Treść pytania" required="required"/> <br>
+<%--            Tak <form:radiobutton path="answer" id="answer" value="tak"/> <br>--%>
+<%--            Nie <form:radiobutton path="answer" id="answer" value="nie"/> <br>--%>
 
-            <input type="submit" value="Dodaj pytanie">
+<%--            <input type="submit" value="Wyślij odpowiedzi">--%>
 
-        </form:form>
+<%--        </form:form>--%>
 
 
 

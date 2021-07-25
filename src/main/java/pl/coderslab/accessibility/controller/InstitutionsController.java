@@ -20,13 +20,12 @@ public class InstitutionsController {
     }
 
     @GetMapping(value = "/addInstitution")
-    public String addInstitutionShow(){ // (Model model)
-        //model.addAttribute("institution", new Institutions());
+    public String addInstitutionShow(Model model){
+        model.addAttribute("institution", new Institutions());
         return "addInstitution";
     }
 
     @PostMapping(value = "/addInstitution")
-
     public String addInstitutionPerform(@RequestParam String name,
                                  @RequestParam String address,
                                  @RequestParam String website,
@@ -38,7 +37,7 @@ public class InstitutionsController {
         institution.setWebsite(website);
         institution.setPhoneNumber(phoneNumber);
         institutionsService.addInstitution(institution);
-        return "success";
+        return "successAddInstitution";
     }
 
 }

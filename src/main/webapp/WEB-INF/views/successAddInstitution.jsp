@@ -1,13 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
   User: ola
-  Date: 22/07/2021
-  Time: 16:39
+  Date: 21/07/2021
+  Time: 18:42
   To change this template use File | Settings | File Templates.
 --%>
 <jsp:include page="header.jsp"/>
 <%@page pageEncoding="UTF-8" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 
 <div id="content-wrapper">
@@ -19,28 +18,17 @@
             <li class="breadcrumb-item">
                 <a href="index.html">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Dodawanie pytania</li>
+            <li class="breadcrumb-item active">Sukces</li>
         </ol>
 
-        <p class="lead">
-
-        <h1 class="display-6">Wpisz pytanie które chcesz dodać</h1>
-
-        </p>
-        <form:form method="post" modelAttribute="question" action="/addQuestion">
-
-
-            <form:input path="description" id="description" type="text" size="110" name="description" placeholder="Treść pytania" required="required"/> <br>
-
-            <input type="submit" value="Dodaj pytanie">
-
-        </form:form>
-
-
+        <!-- Page Content -->
+        <h1 class="display-4">Pomyślnie dodano!</h1>
 
         <p class="lead">
-            <a href="javascript:history.back()">Powrót</a>
+            Teraz odpowiedz na pytania dotyczące dostępności
+            <a href="/addAnswers">kliknij tutaj</a>
         </p>
+
 
         <br/>
         <br/>
@@ -67,4 +55,3 @@
 <!-- /.content-wrapper -->
 
 <jsp:include page="footer.jsp"/>
-
