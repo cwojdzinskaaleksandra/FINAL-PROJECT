@@ -3,9 +3,8 @@ package pl.coderslab.accessibility.model;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+
 
 @Entity
 @Data
@@ -20,7 +19,8 @@ public class Questions {
 
     private String description;
 
-    @OneToMany(mappedBy = "questionId")
+    @OneToMany
+    @JoinColumn(name="question_id")
     private List<Answers> answers;
 
 }

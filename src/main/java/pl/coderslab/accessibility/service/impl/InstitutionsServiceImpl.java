@@ -1,5 +1,7 @@
 package pl.coderslab.accessibility.service.impl;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.coderslab.accessibility.model.Institutions;
@@ -18,7 +20,6 @@ public class InstitutionsServiceImpl implements InstitutionsService {
     public InstitutionsServiceImpl(InstitutionsRepository institutionsRepository) {
         this.institutionsRepository = institutionsRepository;
     }
-
     @Override
     public void addInstitution(Institutions institution){
         institutionsRepository.save(institution);

@@ -1,11 +1,9 @@
 package pl.coderslab.accessibility.model;
 
 import lombok.*;
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+
 import java.util.List;
 
 @Entity
@@ -14,7 +12,6 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Table(name = "institutions")
 public class Institutions {
 
@@ -22,17 +19,16 @@ public class Institutions {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
     private String name;
 
-    @NotBlank
     private String address;
 
     private String website;
 
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "institutionId")
+    @OneToMany
+    @JoinColumn(name="institution_id")
     private List<Answers> answers;
 
 

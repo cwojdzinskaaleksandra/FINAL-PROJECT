@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import pl.coderslab.accessibility.model.Answers;
 
 import java.util.Optional;
+
 @Repository
 public interface AnswersRepository extends JpaRepository<Answers, Long> {
 

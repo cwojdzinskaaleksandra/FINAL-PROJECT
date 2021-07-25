@@ -3,7 +3,7 @@ package pl.coderslab.accessibility.model;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+
 
 @Entity
 @Data
@@ -16,22 +16,22 @@ public class Answers{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @Column(name = "question_id")
     private Long questionId;
 
-    @NotNull
+    @Column(name = "answer_id")
     private Long answerId;
 
-    @NotNull
+    @Column(name = "institution_id")
     private Long institutionId;
 
-    @ManyToOne
-    private Questions questions;
-
-    @ManyToOne
-    private PossibleAnswers possibleAnswers;
-
-    @ManyToOne
-    private Institutions institutions;
+//    @ManyToOne
+//    private Questions questions;
+//
+//    @ManyToOne
+//    private PossibleAnswers possibleAnswers;
+//
+//    @ManyToOne
+//    private Institutions institutions;
 
 }

@@ -11,13 +11,30 @@
             <li class="breadcrumb-item">
                 <a href="index.html">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Blank Page</li>
+            <li class="breadcrumb-item active">Witaj adminie</li>
         </ol>
 
         <!-- Page Content -->
-        <h1>Blank Page</h1>
-        <hr>
-        <p>This is a great starting point for new custom pages.</p>
+        <h1 class="display-4">Witaj adminie!</h1>
+
+        <p class="lead">
+            Jeśli chcesz dodać obiekt, miejsce lub instytuję
+            <a href="/addInstitution">kliknij tutaj</a>
+        </p>
+        <p class="lead">
+            Jeśli chcesz dodać pytanie do kwestionariusza
+            <a href="/addQuestion">kliknij tutaj</a>
+        </p>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <p><a href="/logout">Wyloguj się</a></p>
+
 
     </div>
     <!-- /.container-fluid -->

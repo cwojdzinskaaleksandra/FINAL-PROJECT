@@ -1,3 +1,5 @@
+<%@page pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,23 +28,23 @@
 
 <div class="container">
     <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Login</div>
+        <div class="card-header">Logowanie</div>
         <div class="card-body">
             <form method="post">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <div class="form-group">
                     <div class="form-label-group">
                         <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
-                        <label for="inputEmail">Email address</label>
+                        <label for="inputEmail">Login</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
                         <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-                        <label for="inputPassword">Password</label>
+                        <label for="inputPassword">Hasło</label>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-primary btn-block" value="Login"/>
+                <input type="submit" class="btn btn-primary btn-block" value="Zaloguj"/>
             </form>
 
         </div>

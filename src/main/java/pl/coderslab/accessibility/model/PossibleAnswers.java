@@ -3,8 +3,8 @@ package pl.coderslab.accessibility.model;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.util.List;
+
 
 @Entity
 @Data
@@ -12,7 +12,6 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Table(name = "possible_answers")
 public class PossibleAnswers {
 
@@ -20,9 +19,9 @@ public class PossibleAnswers {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
     private String answer;
 
-    @OneToMany(mappedBy = "answerId")
+    @OneToMany
+    @JoinColumn(name="answer_id")
     private List<Answers> answers;
 }

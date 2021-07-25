@@ -1,6 +1,5 @@
 package pl.coderslab.accessibility.service;
 
-import jdk.nashorn.internal.ir.Optimistic;
 import pl.coderslab.accessibility.model.Answers;
 
 import java.util.List;

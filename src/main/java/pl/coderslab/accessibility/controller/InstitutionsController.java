@@ -3,11 +3,11 @@ package pl.coderslab.accessibility.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pl.coderslab.accessibility.model.Institutions;
 import pl.coderslab.accessibility.service.InstitutionsService;
-
-import java.util.List;
 
 @Controller
 public class InstitutionsController {
@@ -19,21 +19,14 @@ public class InstitutionsController {
         this.institutionsService = institutionsService;
     }
 
-//    @GetMapping("/institutions")
-//    @ResponseBody
-//    public String institutionsList(Model model) {
-//        List<Institutions> institutionsList = institutionsService.findAllInstitutions();
-//        model.addAttribute("institutionsList", institutionsList);
-//        return "institutionsList";
-//    }
-
-    @GetMapping(value = "institutions/add")
+    @GetMapping(value = "/addInstitution")
     public String addInstitutionShow(){ // (Model model)
         //model.addAttribute("institution", new Institutions());
-        return "institutionAdd";
+        return "addInstitution";
     }
 
-    @PostMapping(value = "institutions/add")
+    @PostMapping(value = "/addInstitution")
+
     public String addInstitutionPerform(@RequestParam String name,
                                  @RequestParam String address,
                                  @RequestParam String website,
@@ -47,18 +40,5 @@ public class InstitutionsController {
         institutionsService.addInstitution(institution);
         return "success";
     }
-
-//    @GetMapping("/institutions/delete")
-//    public String deleteInstitution(@RequestParam Long id){
-//        institutionsService.deleteInstitution(id);
-//        return "/success";
-//    }
-//
-//    @GetMapping("/institutions/update")
-//    public String updateInstitution(@RequestParam Institutions institution){
-//        institutionsService.updateInstitution(institution);
-//        return "/success";
-//    }
-
 
 }

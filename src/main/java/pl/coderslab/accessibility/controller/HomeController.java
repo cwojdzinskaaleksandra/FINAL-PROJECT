@@ -1,84 +1,43 @@
 package pl.coderslab.accessibility.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.coderslab.accessibility.model.User;
-import pl.coderslab.accessibility.model.dto.RegisterDto;
-import pl.coderslab.accessibility.exceptions.RegisterFailedException;
-import pl.coderslab.accessibility.service.UserService;
-
-import javax.validation.Valid;
 
 @Controller
 public class HomeController {
 
-    @Autowired
-    UserService userService;
-    @RequestMapping(value = "/",method = RequestMethod.GET)
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(){
-        return "index";
+        return "home";
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    @GetMapping(value = "/login")
     public String login(){
         return "login";
     }
 
-    @RequestMapping(value = "/register",method = RequestMethod.GET)
-    public String register(){
-        return "register";
+
+    @GetMapping(value = "/user")
+    public String user(){
+        return "user";
     }
 
-    @RequestMapping(value = "/register",method = RequestMethod.POST)
-    public String register(@Valid RegisterDto dto, BindingResult result){
-        User user=null;
-
-        if(!result.hasErrors() ){
-            try {
-                user=userService.registerUser(dto);
-            }catch (RegisterFailedException e){
-                return "register";
-            }
-
-            if(user!=null) {
-                return "redirect:login";
-            }
-        }
-        return "register";
-
+    @GetMapping(value = "/admin")
+    public String admin(){
+        return "admin";
     }
-    @RequestMapping(value = "/404",method = RequestMethod.GET)
+
+
+    @GetMapping(value = "/404")
     public String print404(){
         return "404";
     }
-    @RequestMapping(value = "/blank",method = RequestMethod.GET)
+    @GetMapping(value = "/blank")
     public String blank(){
         return "blank";
     }
-
-//    @RequestMapping(value = "/error", method = RequestMethod.GET)
-//    public String error(){
-//        return "error";
-//    }
-
-//    @RequestMapping(value = "/institutions/add", method = RequestMethod.GET)
-//    public String addInstitution(){
-//        return "institutionAdd";
-//    }
-
-//    @RequestMapping(value = "/admin/addQuestion", method = RequestMethod.GET)
-//    public String addQuestion(){
-//        return "questionsAdd";
-//    }
-//
-//    @RequestMapping(value = "/institutions/answers",method = RequestMethod.GET)
-//    public String form(){
-//        return "answersForm";
-//    }
-
 
 }
